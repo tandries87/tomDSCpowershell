@@ -1,1 +1,2 @@
+Install-Module -Name ActiveDirectoryDsc -RequiredVersion 5.0.0
 Install-Module NetworkingDsc
