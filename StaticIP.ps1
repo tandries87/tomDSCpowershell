@@ -1,3 +1,0 @@
-Import-DscResource -ModuleName xNetworking
-
-
