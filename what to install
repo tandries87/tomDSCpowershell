@@ -5,3 +5,5 @@ Install-Module xDhcpServer
 Install-Module xsmbshare
 Install-Module xComputermanagement
 Install-Module xDnsServer
+Install-Module xPendingReboot, xDnsServer, xComputerManagement, NetworkingDsc
+Install-Module xInternetExplorerHomePage 
