@@ -1,2 +1,7 @@
 Install-Module -Name ActiveDirectoryDsc -RequiredVersion 5.0.0
 Install-Module NetworkingDsc
+Install-Module xNetworking
+Install-Module xDhcpServer
+Install-Module xsmbshare
+Install-Module xComputermanagement
+Install-Module xDnsServer
