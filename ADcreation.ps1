@@ -19,8 +19,9 @@ Configuration ADDomain_NewForest_Config
     Import-DscResource -ModuleName xDhcpServer
     Import-DscResource -ModuleName xsmbshare
     Import-DscResource -ModuleName xComputermanagement
+    Import-DscResource -ModuleName xPendingReboot, xDnsServer, xComputerManagement, NetworkingDsc
+    Import-DSCResource -ModuleName xInternetExplorerHomePage 
     Import-DscResource -ModuleName xDnsServer
-    
 
     node $allnodes.nodename
     {   
@@ -243,7 +244,4 @@ $cd = @{
         }
     ) 
 }
-ADDomain_NewForest_Config -ConfigurationData $cd -MachineName -wait -verbose -force
-
-
-
+ADDomain_NewForest_Config -ConfigurationData $cd
