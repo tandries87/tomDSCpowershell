@@ -2,6 +2,7 @@ Configuration ADDomain_NewForest_Config
 {
     param
     (
+     
         [Parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
         [System.Management.Automation.PSCredential]
@@ -10,7 +11,9 @@ Configuration ADDomain_NewForest_Config
         [Parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
         [System.Management.Automation.PSCredential]
-        $SafeModePassword	
+        $SafeModePassword
+	
+
     )
 
     Import-DscResource -ModuleName PSDesiredStateConfiguration
