@@ -1,9 +1,3 @@
-$secpasswd = ConvertTo-SecureString 'Trhyme87' -AsPlainText -Force
-$Safepass = New-Object System.Management.Automation.PSCredential ('guest', $secpasswd)
- 
-$secpasswd = ConvertTo-SecureString 'Trhyme87' -AsPlainText -Force
-$localuser = New-Object System.Management.Automation.PSCredential ('guest', $secpasswd)
-
 Configuration ADDomain_NewForest_Config
 {
     param
@@ -16,14 +10,7 @@ Configuration ADDomain_NewForest_Config
         [Parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
         [System.Management.Automation.PSCredential]
-        $SafeModePassword
-	
-	[string[]]$NodeName ='localhost', 
-        [Parameter()]$firstDomainAdmin,
-        [Parameter()][string]$UserName,
-        [Parameter()]$Safepass,
-        [Parameter()]$Password,
-        [Parameter(Mandatory)] 
+        $SafeModePassword	
     )
 
     Import-DscResource -ModuleName PSDesiredStateConfiguration
@@ -261,6 +248,4 @@ $cd = @{
         }
     ) 
 }
-ADDomain_NewForest_Config -Password $localuser  `
-    -UserName 'tom' -Safepass $Safepass `
-    -firstDomainAdmin (Get-Credential -UserName 'tom' -Message 'no password first domain admin!') -ConfigurationData $cd
+ADDomain_NewForest_Config -ConfigurationData $cd
