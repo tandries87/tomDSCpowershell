@@ -226,7 +226,7 @@ Configuration ADDomain_NewForest_Config
         File WebsiteContent 
         {
             Ensure = 'Present'
-            SourcePath = 'C:\Users\Administrator\index.htm'
+            SourcePath = 'C:\Users\tom\index.htm'
             DestinationPath = 'C:\inetpub\wwwroot\'
             DependsOn='[WindowsFeature]WebServer'
         }
