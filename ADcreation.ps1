@@ -245,8 +245,7 @@ $cd = @{
 	    ActionAfterReboot = 'ContinueConfiguration'
             AllowModuleOverwrite = $true
             RebootNodeIfNeeded = $true
-            PSDscAllowPlainTextPassword = $true
         }
     ) 
 }
-ADDomain_NewForest_Config -ConfigurationData $cd
+ADDomain_NewForest_Config -OutputPath:"C:\Users\tom\ADDdomain_NewForest_Config" -ConfigurationData $cd
