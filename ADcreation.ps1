@@ -226,7 +226,7 @@ Configuration ADDomain_NewForest_Config
         File WebsiteContent 
         {
             Ensure = 'Present'
-            DestinationPath = 'C:\inetpub\wwwroot\index.html'
+            DestinationPath = 'C:\inetpub\wwwroot\index.htm'
 	    Contents        = "<html>
             <header>
                 <title>Homepage of Shutterup</title>
