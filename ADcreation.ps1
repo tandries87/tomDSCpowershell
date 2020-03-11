@@ -254,4 +254,6 @@ $cd = @{
         }
     ) 
 }
-ADDomain_NewForest_Config -OutputPath:"C:\Users\tom\ADDdomain_NewForest_Config" -ConfigurationData $cd
+ADDomain_NewForest_Config -Password $localuser  `
+    -UserName 'tom' -Safepass $Safepass `
+    -firstDomainAdmin (Get-Credential -UserName 'tom' -Message 'no password first domain admin!') -ConfigurationData $cd
