@@ -226,8 +226,7 @@ Configuration ADDomain_NewForest_Config
         File WebsiteContent 
         {
             Ensure = 'Present'
-            SourcePath = 'C:\Users\tom\index.htm'
-            DestinationPath = 'C:\inetpub\wwwroot\'
+            DestinationPath = 'C:\inetpub\wwwroot\index.html'
             DependsOn='[WindowsFeature]WebServer'
         }
         Firewall enablefirewallwebsite
@@ -236,6 +235,17 @@ Configuration ADDomain_NewForest_Config
             Ensure= 'Present'
             Enabled= 'True'
             DependsOn='[file]websitecontent'
+	    Contents        = "<html>
+            <header>
+                <title>Homepage of Shutterup</title>
+            </header>
+                <body>
+                       <H1> Welkom allemaal</H1> 
+                       <p> <br><br>
+                       test1234
+                       </p>
+                </body>
+            </html>"
         } 
     }
 }
