@@ -227,14 +227,6 @@ Configuration ADDomain_NewForest_Config
         {
             Ensure = 'Present'
             DestinationPath = 'C:\inetpub\wwwroot\index.html'
-            DependsOn='[WindowsFeature]WebServer'
-        }
-        Firewall enablefirewallwebsite
-        {
-            Name= 'IIS-WebServerRole-HTTP-In-TCP'
-            Ensure= 'Present'
-            Enabled= 'True'
-            DependsOn='[file]websitecontent'
 	    Contents        = "<html>
             <header>
                 <title>Homepage of Shutterup</title>
@@ -246,6 +238,14 @@ Configuration ADDomain_NewForest_Config
                        </p>
                 </body>
             </html>"
+            DependsOn='[WindowsFeature]WebServer'
+        }
+        Firewall enablefirewallwebsite
+        {
+            Name= 'IIS-WebServerRole-HTTP-In-TCP'
+            Ensure= 'Present'
+            Enabled= 'True'
+            DependsOn='[file]websitecontent'
         } 
     }
 }
