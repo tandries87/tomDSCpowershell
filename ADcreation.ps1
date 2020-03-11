@@ -241,6 +241,11 @@ $cd = @{
         @{  
             NodeName = "localhost"
             PsDscAllowPlainTextPassword = $true
+	    DebugMode = "ForceModuleImport"
+	    ActionAfterReboot = 'ContinueConfiguration'
+            AllowModuleOverwrite = $true
+            RebootNodeIfNeeded = $true
+            PSDscAllowPlainTextPassword = $true
         }
     ) 
 }
