@@ -1,3 +1,9 @@
+$secpasswd = ConvertTo-SecureString 'Trhyme87' -AsPlainText -Force
+$Safepass = New-Object System.Management.Automation.PSCredential ('guest', $secpasswd)
+ 
+$secpasswd = ConvertTo-SecureString 'Trhyme87' -AsPlainText -Force
+$localuser = New-Object System.Management.Automation.PSCredential ('guest', $secpasswd)
+
 Configuration ADDomain_NewForest_Config
 {
     param
