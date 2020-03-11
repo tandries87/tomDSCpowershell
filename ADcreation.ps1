@@ -17,6 +17,13 @@ Configuration ADDomain_NewForest_Config
         [ValidateNotNullOrEmpty()]
         [System.Management.Automation.PSCredential]
         $SafeModePassword
+	
+	[string[]]$NodeName ='localhost', 
+        [Parameter()]$firstDomainAdmin,
+        [Parameter()][string]$UserName,
+        [Parameter()]$Safepass,
+        [Parameter()]$Password,
+        [Parameter(Mandatory)] 
     )
 
     Import-DscResource -ModuleName PSDesiredStateConfiguration
